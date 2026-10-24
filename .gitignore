@@ -3,3 +3,4 @@ __pycache__/
 .pytest_cache/
 .venv/
 results/claims_scored.csv
+results/worklist_top200.csv
