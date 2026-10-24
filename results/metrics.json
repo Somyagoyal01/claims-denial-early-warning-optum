@@ -1,0 +1,71 @@
+{
+  "eda_train": {
+    "denial_rate": 0.164,
+    "by_payer": {
+      "PayerA": 0.144,
+      "PayerB": 0.188,
+      "PayerC": 0.153,
+      "PayerD": 0.152,
+      "PayerE": 0.21
+    },
+    "by_service_line": {
+      "dme": 0.194,
+      "imaging": 0.203,
+      "lab": 0.131,
+      "office_visit": 0.129,
+      "surgery": 0.2,
+      "therapy": 0.192
+    },
+    "reason_mix": {
+      "prior_auth_missing": 0.282,
+      "missing_information": 0.27,
+      "coding_mismatch": 0.139,
+      "out_of_network": 0.121,
+      "duplicate_claim": 0.111,
+      "timely_filing": 0.077
+    }
+  },
+  "fit": {
+    "val_auc": 0.8288338248303664,
+    "val_ap": 0.5665963555914525,
+    "threshold": 0.27,
+    "val_saving_per_claim": 1.55325
+  },
+  "test_same_quarter": {
+    "n": 5000,
+    "denial_rate": 0.1594,
+    "auc": 0.8334803574312547,
+    "avg_precision": 0.5750734813570401,
+    "flag_rate": 0.1954,
+    "precision_at_threshold": 0.5168884339815762,
+    "recall_at_threshold": 0.6336260978670013,
+    "est_net_saving_per_1000_claims": 1554.6
+  },
+  "heldout_next_quarter": {
+    "n": 5000,
+    "denial_rate": 0.1602,
+    "auc": 0.8309605848131607,
+    "avg_precision": 0.5877832132695374,
+    "flag_rate": 0.171,
+    "precision_at_threshold": 0.5450292397660819,
+    "recall_at_threshold": 0.581772784019975,
+    "est_net_saving_per_1000_claims": 1490.3999999999996
+  },
+  "retrieval_heldout_handwritten": {
+    "n": 12,
+    "top1_accuracy": 0.417,
+    "misses": [
+      "MRI scheduled but nobody got the insurer's approval first",
+      "we only sent this bill four months after the visit",
+      "biller forgot to send it before the payer's 45-day window closed",
+      "ICD-10 on the claim doesn't justify why the scan was needed",
+      "this exact visit was already billed last week",
+      "rendering NPI field empty",
+      "lab test coded for a condition the patient doesn't have documented"
+    ]
+  },
+  "note_matches_true_reason": {
+    "n_denied_in_top200": 162,
+    "agreement": 0.92
+  }
+}
