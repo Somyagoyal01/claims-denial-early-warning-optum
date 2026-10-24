@@ -1,0 +1,12 @@
+{"q": "MRI scheduled but nobody got the insurer's approval first", "expect": "PA-01"}
+{"q": "the surgery auth number belongs to a different CPT", "expect": "PA-01"}
+{"q": "we only sent this bill four months after the visit", "expect": "TF-01"}
+{"q": "biller forgot to send it before the payer's 45-day window closed", "expect": "TF-01"}
+{"q": "ICD-10 on the claim doesn't justify why the scan was needed", "expect": "CD-01"}
+{"q": "left and right knee done but line not flagged as bilateral", "expect": "CD-02"}
+{"q": "this exact visit was already billed last week", "expect": "DU-01"}
+{"q": "doctor isn't contracted with the member's insurance plan", "expect": "NW-01"}
+{"q": "member number blank on the CMS-1500 form", "expect": "MI-01"}
+{"q": "rendering NPI field empty", "expect": "MI-01"}
+{"q": "lab test coded for a condition the patient doesn't have documented", "expect": "CD-01"}
+{"q": "resubmitted as a fresh claim instead of a corrected one", "expect": "DU-01"}

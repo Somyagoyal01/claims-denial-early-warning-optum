@@ -1,0 +1,23 @@
+[
+  {"id": "PA-01", "title": "Prior authorization missing",
+   "signals": "procedure or service needs prior authorization, no authorization number on file, authorization expired or for a different service",
+   "fix": "Check the payer's authorization list for this service, attach a valid authorization number, or hold the claim and request retro-authorization before submitting"},
+  {"id": "TF-01", "title": "Timely filing risk",
+   "signals": "claim submitted late, many days after the date of service, close to or past the payer filing deadline",
+   "fix": "Submit immediately and keep proof of the original submission date; if the deadline has passed, prepare evidence for a timely-filing exception"},
+  {"id": "CD-01", "title": "Diagnosis does not support procedure",
+   "signals": "diagnosis code does not support medical necessity for the procedure code, coding mismatch",
+   "fix": "Ask the coder to confirm the diagnosis codes against the clinical note and the payer's coverage policy before release"},
+  {"id": "CD-02", "title": "Missing or wrong modifier",
+   "signals": "modifier missing on a procedure line, bilateral or distinct procedure not marked",
+   "fix": "Add the correct modifier for the procedure line and re-run the claim scrubber"},
+  {"id": "DU-01", "title": "Possible duplicate claim",
+   "signals": "same patient, same service date and same procedure already submitted, duplicate",
+   "fix": "Search for the earlier claim; if it exists, send a corrected or replacement claim instead of a new one"},
+  {"id": "NW-01", "title": "Out-of-network provider",
+   "signals": "rendering provider not in network for the member's plan, network status",
+   "fix": "Verify the provider's network status for this plan and check whether an out-of-network exception or referral applies"},
+  {"id": "MI-01", "title": "Missing claim information",
+   "signals": "required fields empty on the claim form, missing member ID, NPI or address, paper claim",
+   "fix": "Fill the missing fields from the registration record and prefer electronic submission so the clearinghouse edits catch gaps"}
+]
